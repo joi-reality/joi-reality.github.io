@@ -3,43 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JOI Reality - Elegant AI Companion in VR</title>
-    <meta name="description" content="Experience JOI Reality, your elegant AI companion in VR. Everything you want to see, everything you want to hear.">
-    <meta name="keywords" content="JOI Reality, AI companion, VR, virtual reality, elegant woman">
-    <meta property="og:title" content="JOI Reality - Elegant AI Companion">
-    <meta property="og:description" content="Meet your elegant AI companion in virtual reality. JOI Reality brings your dreams to life.">
+    <title>joi reality</title>
+    <meta name="description" content="Experience joi reality, your elegant AI companion in VR. Everything you want to see, everything you want to hear.">
+    <meta name="keywords" content="joi reality, AI companion, VR, virtual reality, elegant woman">
+    <meta property="og:title" content="joi reality - Elegant AI Companion">
+    <meta property="og:description" content="Meet your elegant AI companion in virtual reality. joi reality brings your dreams to life.">
     <meta property="og:image" content="https://joireality.com/og-image.jpg">
     <meta property="og:url" content="https://joireality.com">
     <meta name="twitter:card" content="summary_large_image">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body, html {
             margin: 0;
             padding: 0;
             height: 100%;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Orbitron', sans-serif;
             background-color: #000033;
             color: #FF00FF;
-            overflow: hidden;
+            overflow-x: hidden;
         }
         .container {
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            height: 100%;
-            text-align: center;
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
         }
         h1 {
-            font-size: 4vw;
+            font-size: clamp(2.5rem, 10vw, 5rem);
             margin-bottom: 2vh;
             text-shadow: 0 0 10px #FF00FF, 0 0 20px #FF00FF, 0 0 30px #FF00FF;
+            text-align: center;
+            letter-spacing: 0.1em;
+            font-weight: 700;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
         }
         .character {
-            width: 40vw;
-            height: 60vw;
+            width: min(70vw, 350px);
+            height: min(105vw, 525px);
             position: relative;
-            margin-bottom: 4vh;
-            overflow: hidden;
+            margin: 4vh 0;
         }
         .hologram {
             width: 100%;
@@ -96,34 +107,37 @@
             animation: rotate 20s linear infinite;
         }
         .text {
-            font-size: 2.5vw;
+            font-size: clamp(1.2rem, 4vw, 2.2rem);
             margin-bottom: 2vh;
             opacity: 0;
             animation: fadeIn 4s forwards, neonFlicker 5s infinite;
+            text-align: center;
+            letter-spacing: 0.05em;
         }
         .social-links {
-            position: absolute;
-            bottom: 5vh;
-            left: 0;
-            right: 0;
             display: flex;
             justify-content: center;
-            gap: 5vw;
+            gap: 20px;
+            margin-top: 20px;
         }
         .social-link {
             color: #00FFFF;
             text-decoration: none;
-            font-size: 2vw;
+            font-size: clamp(0.8rem, 2.5vw, 1.2rem);
             transition: all 0.3s;
-            padding: 10px 20px;
+            padding: 12px 24px;
             border: 2px solid #00FFFF;
             border-radius: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            background-color: rgba(0, 255, 255, 0.1);
         }
         .social-link:hover {
             color: #FF00FF;
             border-color: #FF00FF;
             text-shadow: 0 0 10px #FF00FF, 0 0 20px #FF00FF;
             box-shadow: 0 0 10px #FF00FF, 0 0 20px #FF00FF;
+            background-color: rgba(255, 0, 255, 0.1);
         }
         @keyframes pulse {
             0% { opacity: 0.5; transform: scale(1); }
@@ -165,23 +179,25 @@
 </head>
 <body>
     <div class="container">
-        <h1>JOI REALITY</h1>
-        <div class="character">
-            <div class="hologram"></div>
-            <div class="magical-aura"></div>
-            <div class="woman"></div>
-            <div class="hair"></div>
-            <div class="face">
-                <div class="eye left"></div>
-                <div class="eye right"></div>
+        <h1>joi reality</h1>
+        <div class="content">
+            <div class="text">everything you want to see</div>
+            <div class="text" style="animation-delay: 2s;">everything you want to hear</div>
+            <div class="character">
+                <div class="hologram"></div>
+                <div class="magical-aura"></div>
+                <div class="woman"></div>
+                <div class="hair"></div>
+                <div class="face">
+                    <div class="eye left"></div>
+                    <div class="eye right"></div>
+                </div>
             </div>
         </div>
-        <div class="text">Everything you want to see</div>
-        <div class="text" style="animation-delay: 2s;">Everything you want to hear</div>
-    </div>
-    <div class="social-links">
-        <a href="https://www.youtube.com/@joireality" class="social-link" target="_blank">YouTube</a>
-        <a href="https://www.instagram.com/joi.reality" class="social-link" target="_blank">Instagram</a>
+        <div class="social-links">
+            <a href="https://www.youtube.com/@joireality" class="social-link" target="_blank">YouTube</a>
+            <a href="https://www.instagram.com/joi.reality" class="social-link" target="_blank">Instagram</a>
+        </div>
     </div>
 </body>
 </html>
