@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOI Reality - Elegant AI Companion in VR</title>
+    <meta name="description" content="Experience JOI Reality, your elegant AI companion in VR. Everything you want to see, everything you want to hear.">
+    <meta name="keywords" content="JOI Reality, AI companion, VR, virtual reality, elegant woman">
+    <meta property="og:title" content="JOI Reality - Elegant AI Companion">
+    <meta property="og:description" content="Meet your elegant AI companion in virtual reality. JOI Reality brings your dreams to life.">
+    <meta property="og:image" content="https://joireality.com/og-image.jpg">
+    <meta property="og:url" content="https://joireality.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Arial', sans-serif;
+            background-color: #000033;
+            color: #FF00FF;
+            overflow: hidden;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            text-align: center;
+        }
+        h1 {
+            font-size: 4vw;
+            margin-bottom: 2vh;
+            text-shadow: 0 0 10px #FF00FF, 0 0 20px #FF00FF, 0 0 30px #FF00FF;
+        }
+        .character {
+            width: 40vw;
+            height: 60vw;
+            position: relative;
+            margin-bottom: 4vh;
+            overflow: hidden;
+        }
+        .hologram {
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at center, rgba(0,255,255,0.1) 0%, rgba(255,0,255,0.1) 100%);
+            position: absolute;
+            opacity: 0.7;
+            animation: pulse 4s infinite alternate;
+        }
+        .woman {
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 150"><path d="M50 5 C30 20 20 40 25 70 C27 85 35 100 50 145 C65 100 73 85 75 70 C80 40 70 20 50 5" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="0.5"/></svg>') no-repeat center center;
+            background-size: contain;
+            position: absolute;
+            animation: float 6s ease-in-out infinite;
+        }
+        .hair {
+            width: 120%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 150"><path d="M60 0 C30 30 10 60 20 90 C25 105 35 120 60 150 C85 120 95 105 100 90 C110 60 90 30 60 0" fill="none" stroke="rgba(0,255,255,0.8)" stroke-width="1"/></svg>') no-repeat center center;
+            background-size: contain;
+            position: absolute;
+            top: -10%;
+            left: -10%;
+            animation: flow 10s ease-in-out infinite, neonGlow 2s infinite alternate;
+        }
+        .face {
+            width: 30%;
+            height: 15%;
+            position: absolute;
+            top: 22%;
+            left: 35%;
+            background: radial-gradient(ellipse at center, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0) 70%);
+        }
+        .eye {
+            width: 20%;
+            height: 30%;
+            background-color: rgba(255,0,255,0.8);
+            border-radius: 50%;
+            position: absolute;
+            top: 30%;
+            animation: eyeGlow 4s infinite alternate;
+        }
+        .eye.left { left: 20%; }
+        .eye.right { right: 20%; }
+        .magical-aura {
+            width: 150%;
+            height: 150%;
+            position: absolute;
+            top: -25%;
+            left: -25%;
+            background: radial-gradient(circle, rgba(255,0,255,0.1) 0%, rgba(0,255,255,0.1) 50%, rgba(255,255,255,0) 70%);
+            animation: rotate 20s linear infinite;
+        }
+        .text {
+            font-size: 2.5vw;
+            margin-bottom: 2vh;
+            opacity: 0;
+            animation: fadeIn 4s forwards, neonFlicker 5s infinite;
+        }
+        .social-links {
+            position: absolute;
+            bottom: 5vh;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 5vw;
+        }
+        .social-link {
+            color: #00FFFF;
+            text-decoration: none;
+            font-size: 2vw;
+            transition: all 0.3s;
+            padding: 10px 20px;
+            border: 2px solid #00FFFF;
+            border-radius: 5px;
+        }
+        .social-link:hover {
+            color: #FF00FF;
+            border-color: #FF00FF;
+            text-shadow: 0 0 10px #FF00FF, 0 0 20px #FF00FF;
+            box-shadow: 0 0 10px #FF00FF, 0 0 20px #FF00FF;
+        }
+        @keyframes pulse {
+            0% { opacity: 0.5; transform: scale(1); }
+            100% { opacity: 0.7; transform: scale(1.05); }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        @keyframes flow {
+            0%, 100% { transform: rotate(-2deg); }
+            50% { transform: rotate(2deg); }
+        }
+        @keyframes neonGlow {
+            0% { filter: drop-shadow(0 0 2px #00FFFF) drop-shadow(0 0 4px #00FFFF); }
+            100% { filter: drop-shadow(0 0 5px #00FFFF) drop-shadow(0 0 10px #00FFFF) drop-shadow(0 0 15px #00FFFF); }
+        }
+        @keyframes eyeGlow {
+            0% { box-shadow: 0 0 5px #FF00FF, 0 0 10px #FF00FF; }
+            100% { box-shadow: 0 0 10px #FF00FF, 0 0 20px #FF00FF, 0 0 30px #FF00FF; }
+        }
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        @keyframes neonFlicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+                text-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF, 0 0 30px #00FFFF;
+            }
+            20%, 24%, 55% {
+                text-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>JOI REALITY</h1>
+        <div class="character">
+            <div class="hologram"></div>
+            <div class="magical-aura"></div>
+            <div class="woman"></div>
+            <div class="hair"></div>
+            <div class="face">
+                <div class="eye left"></div>
+                <div class="eye right"></div>
+            </div>
+        </div>
+        <div class="text">Everything you want to see</div>
+        <div class="text" style="animation-delay: 2s;">Everything you want to hear</div>
+    </div>
+    <div class="social-links">
+        <a href="https://www.youtube.com/@joireality" class="social-link" target="_blank">YouTube</a>
+        <a href="https://www.instagram.com/joi.reality" class="social-link" target="_blank">Instagram</a>
+    </div>
+</body>
+</html>
